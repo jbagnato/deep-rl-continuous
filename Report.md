@@ -1,6 +1,6 @@
 # Project 2 Report: Continuous Control
 
-### Introduction
+## Introduction
 
 For this project, you will work with the [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) environment.
 
@@ -10,14 +10,35 @@ In this environment, a double-jointed arm can move to target locations. A reward
 
 The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 
-### Learning Algorithm
+## Learning Algorithm
 
 I used DDPG Algorithm to solve the practice excercise. 
 I took a previous code from "pendulum Excercise" directory and modified it to make it work on this new environment.
 
+### DDPG Algorithm
+
+Deep Deterministic Policy Gradient (DDPG) is an algorithm which concurrently learns a Q-function and a policy. It uses off-policy data and the Bellman equation to learn the Q-function, and uses the Q-function to learn the policy.
 
 
-### Plot of Rewards
+### Hyperparameters
+
+The hyperparameters used were:
+
+```xml
+BUFFER_SIZE = int(1e5)  # replay buffer size
+BATCH_SIZE = 128        # minibatch size
+GAMMA = 0.99            # discount factor
+TAU = 1e-3              # for soft update of target parameters
+LR_ACTOR = 1e-3         # learning rate of the actor
+LR_CRITIC = 1e-4        # learning rate of the critic
+WEIGHT_DECAY = 0        # L2 weight decay
+```
+
+
+### Neural Networks
+
+
+## Plot of Rewards
 
 ```xml
 Episode 100	Average Score: 0.78
@@ -34,6 +55,6 @@ Rewards plot image:
 ![Rewards Plot](https://github.com/jbagnato/deep-rl-continuous/blob/main/rewards_plot.png)
 
 
-#### Ideas for future Work
+## Ideas for future Work
 
 On future work It would be great to use other RL models like:

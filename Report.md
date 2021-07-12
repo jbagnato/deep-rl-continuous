@@ -19,6 +19,10 @@ I took a previous code from "pendulum Excercise" directory and modified it to ma
 
 Deep Deterministic Policy Gradient (DDPG) is an algorithm which concurrently learns a Q-function and a policy. It uses off-policy data and the Bellman equation to learn the Q-function, and uses the Q-function to learn the policy.
 
+- DDPG is an off-policy algorithm.
+- DDPG can only be used for environments with continuous action spaces.
+- DDPG can be thought of as being deep Q-learning for continuous action spaces.
+- The Spinning Up implementation of DDPG does not support parallelization.
 
 ### Hyperparameters
 
@@ -37,8 +41,24 @@ WEIGHT_DECAY = 0        # L2 weight decay
 
 ### Neural Networks
 
+There were used 2 NN for Actor and Critic models. The architecture used was the same:
+
+#### Actor NN
+
+- Hidden: (input, 200) - ReLU
+- Hidden: (200, 100) - ReLU
+- Output: (100, 4) - TanH
+
+#### Critic NN
+
+- Hidden: (input, 200) - ReLU
+- Hidden: (200 + action_size, 100) - ReLU
+- Output: (100, 1) - Linear
+
 
 ## Plot of Rewards
+
+To solve the problem, the agent receives an average reward (over 100 episodes) of at least +30:
 
 ```xml
 Episode 100	Average Score: 0.78

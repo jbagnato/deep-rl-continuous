@@ -15,6 +15,16 @@ The observation space consists of 33 variables corresponding to position, rotati
 I used DDPG Algorithm to solve the practice excercise. 
 I took a previous code from "pendulum Excercise" directory and modified it to make it work on this new environment.
 
+I had trouble to get more than 0.8 score over 1000 Episodes. To solve the problem I made some modifications on code:
+
+* Episode Max length was gradually incremented over time and limit to 150.000
+* Add Noise parameter set to False
+* Neural Networks with layers of 200 and 100 hidden units.
+* Agent learn method (with soft update) called every 7 steps.
+* Actor and critic Learning rates of 1e-3 and 1e-4
+
+After all those modifications and testing in CPU and GPU environments I could reach AVG of +30.0 (over last 100 episodes) after 563 episodes.
+
 ### DDPG Algorithm
 
 Deep Deterministic Policy Gradient (DDPG) is an algorithm which concurrently learns a Q-function and a policy. It uses off-policy data and the Bellman equation to learn the Q-function, and uses the Q-function to learn the policy.
@@ -78,3 +88,9 @@ Rewards plot image:
 ## Ideas for future Work
 
 On future work It would be great to use other RL models like:
+
+* D4PG
+* Try on the Version 2 Agent with 20 arms envornment.
+* Try the Crawler optional excercise.
+
+

@@ -12,13 +12,25 @@ The observation space consists of 33 variables corresponding to position, rotati
 
 ### Learning Algorithm
 
-I used DDPG Algorithm. I take a previous version from "pendulum Excercise" and modified it to make it work on this new environment.
+I used DDPG Algorithm to solve the practice excercise. 
+I took a previous code from "pendulum Excercise" directory and modified it to make it work on this new environment.
 
 
 
 ### Plot of Rewards
 
+```xml
+Episode 100	Average Score: 0.78
+Episode 200	Average Score: 2.19
+Episode 300	Average Score: 7.01
+Episode 400	Average Score: 16.94
+Episode 500	Average Score: 24.64
+Episode 563	Average Score: 30.06
+Environment solved in 563 episodes!	Average Score: 30.06
+```
+
 Rewards plot image:
+
 ![Rewards Plot](https://github.com/jbagnato/deep-rl-continuous/blob/main/rewards_plot.png)
 
 

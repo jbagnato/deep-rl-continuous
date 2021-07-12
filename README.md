@@ -1,6 +1,9 @@
 # Continuous Control Project
 ## Udacity Deep Reinforcement Learning - Nanodegree Program
 
+![Trained RL Agent](https://github.com/jbagnato/deep-rl-continuous/blob/main/p2_navigation.gif)
+
+
 In this Repo you will find my solution to 2nd Project of Deep Reinforcement Learning, Udacity Nanodegree called "Continuous Control".
 
 I will be training the First Version that consist of a SINGLE agent.
